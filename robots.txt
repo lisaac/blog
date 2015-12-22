@@ -1,0 +1,14 @@
+# hexo robots.txt
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /posts/
+Allow: /tags/
+
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+
+Sitemap: http://blog.ick.im/sitemap.xml
+Sitemap: http://blog.ick.im/baidusitemap.xml
