@@ -29,7 +29,7 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+  <link href="../vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
 
@@ -38,9 +38,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="../vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
+<link href="../css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="3D打印,Arduino," />
@@ -52,7 +52,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico?v=5.0.0" />
 
 
 
@@ -85,7 +85,7 @@
 <meta property="og:image" content="http://ww4.sinaimg.cn/mw690/66dae2b0gw1eyrdfu5j9oj22io1oghdt.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/mw690/66dae2b0gw1eyrdg0umgaj22io1oghdt.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw690/66dae2b0gw1eyrdef16pkj21g320x4qp.jpg">
-<meta property="og:updated_time" content="2015-12-22T06:44:59.417Z">
+<meta property="og:updated_time" content="2015-12-22T08:00:12.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="入坑? Ick's 3D打印折腾历程">
 <meta name="twitter:description" content="0.起源要追溯到DIY x86黑裙（为了折腾而折腾），当时买了一个j1900裸板，京东刚刚4T红盘999特价，估摸着自己搭一个nas玩玩。买回来后，机箱是大问题，四处寻觅后想着用2020铝型材搭一个，一个周末后搞定，后来加了wifi天线，自己画了个图，让马云家做了一个亚克力板，当盖板，固定天线。夏天用的时候发现温度有点高，有了加散热的念头，一开始考虑用亚克力搞，由于之前的经验，自己画图淘宝做稍有差">
@@ -175,7 +175,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="../index.html" rel="section">
             
               <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
@@ -185,7 +185,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="../archives" rel="section">
             
               <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
@@ -195,7 +195,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="../tags" rel="section">
             
               <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
@@ -205,7 +205,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="../about" rel="section">
             
               <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
@@ -304,7 +304,7 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/posts/2015-12-08-icks-3d-printer.html#comments" itemprop="discussionUrl">
+                <a href="#comments" itemprop="discussionUrl">
                   <span class="post-comments-count ds-thread-count" data-thread-key="posts/2015-12-08-icks-3d-printer.html" itemprop="commentsCount"></span>
                 </a>
               </span>
@@ -315,7 +315,7 @@
 
           
           
-             <span id="/posts/2015-12-08-icks-3d-printer.html" class="leancloud_visitors" data-flag-title="入坑? Ick's 3D打印折腾历程">
+             <span id="" class="leancloud_visitors" data-flag-title="入坑? Ick's 3D打印折腾历程">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -394,7 +394,7 @@
 <h3 id="5-5-调平&amp;自动调平">5.5.调平&amp;自动调平</h3><p>不得不说对于i3系结构来说调平是个大坑，很多时候第一层打印不牢靠与打印平台没有调平存在很大原因，好在机架比较扎实，手动调平一次就可以一直打印。调平的经历我就不说了。自动调平，主要是通过各种传感器或者用舵机控制触点开关反馈给控制板让其知道平台上的高低，通过软件的算法，来弥补平台的高低。在三角洲打印机上基本上是标配，目前Marlin最新版本已经很好的支持了自动调平。在加上传感器的情况下，简单配置Marlin就可以实现自动调平。<br>显然我在一开始做规划的时候没有考虑到自动调平，加上舵机这种方式结构上太复杂，后来翻看reprap相关资料发现可以用接近/光电开关来进行平台探测，结构上非常简单，当然对这些开关的重复精度要求较高。光电开关一般选用漫反射原理，接近开关分电容式和电感式。由于我的热床是铝基板，电容式、电感式都可以使用，为了省钱，买了个电感式接近开关，安装后效果满意，从此再也不用调平了。</p>
 <p>最后附上万恶之源j1900搭建的黑裙<br><img src="http://ww1.sinaimg.cn/mw690/66dae2b0gw1eyrdef16pkj21g320x4qp.jpg" class="full-image" alt="j1900"></p>
 <p>资源列表：<br><a href="http://reprap.org/wiki/Comparison_of_Firmware" target="_blank" rel="external">reprap固件列表</a><br><a href="http://reprap.org/wiki/Comparison_of_Electronics" target="_blank" rel="external">reprap控制板列表</a><br><a href="http://reprap.org/wiki/Hot_End_Comparison" target="_blank" rel="external">reprap加热头列表</a><br><a href="http://www.thingiverse.com/" target="_blank" rel="external">thingiverse模型库</a></p>
-<p>原创内容，转载注明出处。<br>本文链接：<a href="http://blog.ick.im/posts/2015-12-08-icks-3d-printer.html">http://blog.ick.im/posts/2015-12-08-icks-3d-printer.html</a></p>
+<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。<br>本文链接：<a href="http://blog.ick.im/posts/2015-12-08-icks-3d-printer.html">http://blog.ick.im/posts/2015-12-08-icks-3d-printer.html</a></p>
 
       
     </div>
@@ -403,9 +403,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/3D打印/" rel="tag">#3D打印</a>
+            <a href="../tags/index.html" rel="tag">#3D打印</a>
           
-            <a href="/tags/Arduino/" rel="tag">#Arduino</a>
+            <a href="../tags/index.html" rel="tag">#Arduino</a>
           
         </div>
       
@@ -414,7 +414,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/2015-08-03-lg-napl-5000-ubnt.html" rel="next" title="LG-NAPL-5000 刷ubnt 折腾记">
+              <a href="2015-08-03-lg-napl-5000-ubnt.html" rel="next" title="LG-NAPL-5000 刷ubnt 折腾记">
                 <i class="fa fa-chevron-left"></i> LG-NAPL-5000 刷ubnt 折腾记
               </a>
             
@@ -491,7 +491,7 @@
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
-            <a href="/archives">
+            <a href="../archives">
               <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
@@ -505,7 +505,7 @@
           </div>
 
           <div class="site-state-item site-state-tags">
-            <a href="/tags">
+            <a href="../tags">
               <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">标签</span>
               </a>
@@ -627,41 +627,41 @@
 
 
 
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="../vendors/jquery/index.js?v=2.1.3"></script>
 
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="../vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="../vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="../vendors/velocity/velocity.min.js"></script>
 
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+  <script type="text/javascript" src="../vendors/velocity/velocity.ui.min.js"></script>
 
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.0"></script>
-
+  <script type="text/javascript" src="../vendors/fancybox/source/jquery.fancybox.pack.js"></script>
 
 
   
-  
 
 
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.0"></script>
+  <script type="text/javascript" src="../js/src/utils.js?v=5.0.0"></script>
 
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.0"></script>
+  <script type="text/javascript" src="../js/src/motion.js?v=5.0.0"></script>
 
 
 
   
   
-<script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.0"></script>
+
+
+  <script type="text/javascript" src="../js/src/affix.js?v=5.0.0"></script>
+
+  <script type="text/javascript" src="../js/src/schemes/pisces.js?v=5.0.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="../js/src/scrollspy.js?v=5.0.0"></script>
 
 <script type="text/javascript" id="sidebar.toc.highlight">
   $(document).ready(function () {
@@ -825,7 +825,7 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.0"></script>
+  <script type="text/javascript" src="../js/src/bootstrap.js?v=5.0.0"></script>
 
 
 
@@ -850,8 +850,8 @@
 
   
     
-      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
-      <script src="/js/src/hook-duoshuo.js"></script>
+      <script src="../vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="../js/src/hook-duoshuo.js"></script>
     
   
 
