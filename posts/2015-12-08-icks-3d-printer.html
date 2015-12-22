@@ -1,0 +1,963 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="etHoq3b0HNz6_QelDBMdB9nLvPKNDpuHTHjAYMzpgms" />
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="3D打印,Arduino," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.0" />
+
+
+
+
+
+
+<meta name="description" content="0.起源要追溯到DIY x86黑裙（为了折腾而折腾），当时买了一个j1900裸板，京东刚刚4T红盘999特价，估摸着自己搭一个nas玩玩。买回来后，机箱是大问题，四处寻觅后想着用2020铝型材搭一个，一个周末后搞定，后来加了wifi天线，自己画了个图，让马云家做了一个亚克力板，当盖板，固定天线。夏天用的时候发现温度有点高，有了加散热的念头，一开始考虑用亚克力搞，由于之前的经验，自己画图淘宝做稍有差">
+<meta property="og:type" content="article">
+<meta property="og:title" content="入坑? Ick's 3D打印折腾历程">
+<meta property="og:url" content="http://blog.ick.im/posts/2015-12-08-icks-3d-printer.html">
+<meta property="og:site_name" content="Ick's Blog">
+<meta property="og:description" content="0.起源要追溯到DIY x86黑裙（为了折腾而折腾），当时买了一个j1900裸板，京东刚刚4T红盘999特价，估摸着自己搭一个nas玩玩。买回来后，机箱是大问题，四处寻觅后想着用2020铝型材搭一个，一个周末后搞定，后来加了wifi天线，自己画了个图，让马云家做了一个亚克力板，当盖板，固定天线。夏天用的时候发现温度有点高，有了加散热的念头，一开始考虑用亚克力搞，由于之前的经验，自己画图淘宝做稍有差">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/66dae2b0gw1eyrdepfevpj22io1f0e5s.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/66dae2b0gw1eys40fwd2ej21kw18ikft.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/66dae2b0gw1eys449ibp6j21w017vqpf.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/66dae2b0gw1eyrdfjb2o8j21w01w0e81.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/66dae2b0gw1eys66q3mjtj21kw0xstr5.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/66dae2b0gw1eys44hsmagj21id1654m7.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/66dae2b0gw1eys44kz1pnj21je0y3gy5.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/66dae2b0gw1eys66uvrwtj21kw17i4dz.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/66dae2b0gw1eyrdf07x1mj21zv17skj1.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/66dae2b0gw1eyrdf4r3pzj21w01w0b29.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/66dae2b0gw1eys44pimtdj21s81fdqs6.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/66dae2b0gw1eys496go6mj203j03o743.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/66dae2b0gw1eyrddy3bc1j225o17ptuj.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/66dae2b0gw1eys44sd9j7j20k00gsdj5.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/66dae2b0gw1eys4577qosj224l1p97wh.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw690/66dae2b0gw1eys44yyx2jj21u219wtoe.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/66dae2b0gw1eyrdg76v6rj22io1oge81.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw690/66dae2b0gw1eyrdfu5j9oj22io1oghdt.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw690/66dae2b0gw1eyrdg0umgaj22io1oghdt.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/66dae2b0gw1eyrdef16pkj21g320x4qp.jpg">
+<meta property="og:updated_time" content="2015-12-22T06:44:59.417Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="入坑? Ick's 3D打印折腾历程">
+<meta name="twitter:description" content="0.起源要追溯到DIY x86黑裙（为了折腾而折腾），当时买了一个j1900裸板，京东刚刚4T红盘999特价，估摸着自己搭一个nas玩玩。买回来后，机箱是大问题，四处寻觅后想着用2020铝型材搭一个，一个周末后搞定，后来加了wifi天线，自己画了个图，让马云家做了一个亚克力板，当盖板，固定天线。夏天用的时候发现温度有点高，有了加散热的念头，一开始考虑用亚克力搞，由于之前的经验，自己画图淘宝做稍有差">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: '[object Object]',
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6134245,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 入坑? Ick's 3D打印折腾历程 | Ick's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71180310-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?b5wu5Fxy7A";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ick's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">梦里梦到醒不来的梦</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="#" class="st-search-show-outputs">
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', '7z2UQRyL691ys7RwUA9z','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                入坑? Ick's 3D打印折腾历程
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-08T00:00:00+08:00" content="2015-12-08">
+              2015-12-08
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/posts/2015-12-08-icks-3d-printer.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="posts/2015-12-08-icks-3d-printer.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/posts/2015-12-08-icks-3d-printer.html" class="leancloud_visitors" data-flag-title="入坑? Ick's 3D打印折腾历程">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="0-起源">0.起源</h2><p>要追溯到DIY x86黑裙（为了折腾而折腾），当时买了一个j1900裸板，京东刚刚4T红盘999特价，估摸着自己搭一个nas玩玩。<br>买回来后，机箱是大问题，四处寻觅后想着用2020铝型材搭一个，一个周末后搞定，后来加了wifi天线，自己画了个图，让马云家做了一个亚克力板，当盖板，固定天线。<br>夏天用的时候发现温度有点高，有了加散热的念头，一开始考虑用亚克力搞，由于之前的经验，自己画图淘宝做稍有差错重新搞就麻烦了，再加上淘宝上刻亚克力也不便宜，正好看到数码之家有人在玩diy玩具雕刻机，就此中毒。<br>经过前后2个周末的搜索，3D打印逐渐进入我的视线，心里默念，DIYer必须搞一个。<br>在寻求3d打印的路上，是买套件还是自己diy呢，查各种网站、各种淘宝后，考虑许久，最终，还是在<a href="https://www.youtube.com/playlist?list=PLE1CU6EebvTDKAhLdsJv6PK58f6TAZVKy" target="_blank" rel="external">Youtube</a>看到一个牛人<a href="https://www.youtube.com/channel/UC0h00uiv1Bpt2r6fyus4GWQ" target="_blank" rel="external">Evan</a>的机架，开启3D打印之旅，历时4个周末。<br><img src="http://ww1.sinaimg.cn/mw690/66dae2b0gw1eyrdepfevpj22io1f0e5s.jpg" class="full-image" "3d打印"=""><br><a id="more"></a></p>
+<h2 id="1-采购">1.采购</h2><p>考虑到自身对机械一窍不通，首先要求不高，能跑起来就ok，想着边搞边学的，多买了不少东西，全部来自淘宝。</p>
+<h3 id="1-1-框架">1.1.框架</h3><p>用的4040铝型材搭建，总共7条418mm + 1条480mm长的4040铝型材，加上一些连接件。搭建的过程并不复杂，直接上就可以；<br><img src="http://ww3.sinaimg.cn/mw690/66dae2b0gw1eys40fwd2ej21kw18ikft.jpg" class="full-image" alt="框架"></p>
+<h3 id="1-2-线轨和滑块">1.2.线轨和滑块</h3><p>线轨滑块是最烧钱的东西，还好我大山寨马云家有，虽然质量一般，主要是够（没）用（钱），考虑到后续可能要当雕刻机用，被忽悠选用了15系列沉重型线轨。虽然我对机械一点不懂，但是看上去还是挺扎实的；安装到铝型材上，毫无技术含量；<br><img src="http://ww2.sinaimg.cn/mw690/66dae2b0gw1eys449ibp6j21w017vqpf.jpg" class="full-image" alt="滑块"><img src="http://ww2.sinaimg.cn/mw690/66dae2b0gw1eyrdfjb2o8j21w01w0e81.jpg" class="full-image" alt="线轨"></p>
+<h3 id="1-3-定制钢板">1.3.定制钢板</h3><p>这个是最头疼的问题，<a href="https://www.youtube.com/channel/UC0h00uiv1Bpt2r6fyus4GWQ" target="_blank" rel="external">Evan</a>设计的结构电机是放在顶上，我在看了一些结构后想改造下，把电机放到底部，所以就对钢板进行重新绘制。可恶的是我完全不懂CAD，只能慢慢摸索，学习CAD制图，最终经过n次的改版，最终搞定。<br>依旧淘宝，不过我想说定制钢板水好深，找了n家，没信心了，随便找一家做了。总共花了200多大洋，这个坑钱最多了；</p>
+<h3 id="1-4-丝杆/齿轮/传动皮带/联轴器">1.4.丝杆/齿轮/传动皮带/联轴器</h3><p>T8导程为4mm的丝杆（事实证明3d打印机还是用导程小的丝杆吧，应该有助于提高精度）；齿轮2个和传动轮2米；联轴器用来固定丝杆和电机主轴；</p>
+<h3 id="1-5-螺丝">1.5.螺丝</h3><p>完全不懂机械，买的太多了，将近100RMB的各种螺丝，不说了，从M3-M8;</p>
+<h3 id="1-6-步进电机">1.6.步进电机</h3><p>开始的适合各种不懂，以为机械运动需要很大的力，选择了57步进电机，反而挤出机选择了一个小小的42步进电机，不过在面用的过程中一切正常。我想说我买的2手电机，成色很好，价格便宜，为卖家赞一个。<br><img src="http://ww3.sinaimg.cn/mw690/66dae2b0gw1eys66q3mjtj21kw0xstr5.jpg" class="full-image" alt="线轨"></p>
+<h3 id="1-7-电子器件">1.7.电子器件</h3><p><strong>mega 2560 + <a href="http://reprap.org/wiki/RAMPS_1.4" target="_blank" rel="external">RAMPS 1.4</a> + <code>smart controller 2004</code> + drv8825</strong><br>目前主流的DIY 3D打印机基本用的是核心为<code>ATmega2560</code>的主控板，在reprap上，最多的就是用<code>Arduino</code>官方出的<code>mega 2560</code>+<a href="http://reprap.org/wiki/RAMPS" target="_blank" rel="external">RAMPS扩展板</a>，当然现在也不乏有人用一体板，更甚者用arm芯片开发的控制板。<br><a href="http://reprap.org/wiki/Comparison_of_Electronics" target="_blank" rel="external">控制板列表</a>，根据自己喜好选择。<br>选用：<a href="http://reprap.org/wiki/RAMPS_1.4" target="_blank" rel="external">RAMPS 1.4</a> + mage 2560，无他，主要是便宜，RAMPS只要20不到就能搞定，mega2560淘宝价40不到（当然电源芯片1117的质量不行，用了几次1117芯片挂了，后去电子市场花了5毛钱，上烙铁搞定）<br>这应该算是3d打印里面的基本配置，可玩性还算可以，电机驱动部分用了<code>drv8825</code>，主要是考虑到了57步进电机需要电流较大；</p>
+<h3 id="1-8-相关3d打印器件">1.8.相关3d打印器件</h3><blockquote>
+<p>FDM 3D打印工作原理：<br><code>挤出机</code>实际就是一个步进电机加齿轮，通过齿轮咬住耗材，控制步进电机转动就可以控制耗材的送料或者回抽，<strong>任务就是将耗材送到<code>打印头</code></strong>。<br><code>打印头(hot end)</code>将打印耗材（塑料）通过加热融化，打印头尾部是打印嘴（一般是直径0.4mm，可选），当然加热是通过PID算法保持恒温的。<br>随着<code>挤出机</code>的将<code>耗材</code>送到<code>打印头</code>，打印头此时直接能将耗材融化，从而耗材就变成直径为0.4mm（根据打印嘴来定）的细细的打印耗材，之后通过机械运动带动打印头XYZ轴方向的运动，就可以将细细的耗材堆积成想要的模型。</p>
+<ul>
+<li><strong>打印头、挤出机</strong><br>打印头是选用E3D v6大天朝区山寨版，还别说，用着还不错，至少我到现在还没碰到过堵头。哦，忘了说，之前在调试机器的适合打印嘴和热床亲密接触过n次，现在我的热床上还有划痕。</li>
+<li><strong>热床</strong><br>什么是<code>热床</code>，主要是刚刚讲的0.4mm的耗材在堆积在平台上的时候，由于平台的温度和耗材温差极大，会导致<code>耗材</code>无法附着在平台上，或者直接脱落。为解决这个问题，就是加上<code>热床</code>，顾名思义，就是会色的床，通过控制板用PID算法，将热床温度固定到一定温度，<code>耗材</code>就能顺利附着在热床上。<br>当然，如果是打印<code>PLA材料</code>可以在平台上贴美文纸或者固体胶同样可以达到满意的效果，对，记得固体胶要PVP的。<br>好了，热床同样是来自reprap的<a href="http://reprap.org/wiki/PCB_Heatbed#MK3_ALU-Heatbed_Dual_Power" target="_blank" rel="external">mk3</a>大天朝区山寨版，铝基板面，支持双电压输入；</li>
+<li><strong>挤出机</strong><br>淘宝常规款；</li>
+<li><strong>耗材</strong><br>PLA，49元一卷。</li>
+</ul>
+</blockquote>
+<h2 id="2-机械组装">2.机械组装</h2><blockquote>
+<p>组装过程中无数坑，说多了都是泪，说到底还是没有经验。</p>
+</blockquote>
+<p>↓组装过程<br><img src="http://ww1.sinaimg.cn/mw690/66dae2b0gw1eys44hsmagj21id1654m7.jpg" class="full-image" alt="线轨安装"><br><img src="http://ww2.sinaimg.cn/mw690/66dae2b0gw1eys44kz1pnj21je0y3gy5.jpg" class="full-image" alt="电机安装"><br><img src="http://ww2.sinaimg.cn/mw690/66dae2b0gw1eys66uvrwtj21kw17i4dz.jpg" class="full-image" alt="打印头安装"><br><img src="http://ww4.sinaimg.cn/mw690/66dae2b0gw1eyrdf07x1mj21zv17skj1.jpg" class="full-image" alt=""><br><img src="http://ww3.sinaimg.cn/mw690/66dae2b0gw1eyrdf4r3pzj21w01w0b29.jpg" class="full-image" alt="打印头安装"><br><img src="http://ww4.sinaimg.cn/mw690/66dae2b0gw1eys44pimtdj21s81fdqs6.jpg" class="full-image" alt="热床安装"></p>
+<h3 id="2-1-坑·步进电机">2.1.坑·步进电机</h3><p>事实证明买二手电机有利有弊，我买的那个二手电机据说是从日本进口办公设备上拆下来的，问题是带了齿轮！齿轮！齿轮！这个问题太让我头疼了，带皮带到正好，直接可以用。可问题是丝杆联轴器怎么装，只有硬着头皮拆齿轮。据说齿轮是通过烧红了以后利用热胀冷缩原理套在电机主轴上的，一开始想着用火烧、放冰箱接着火烧，无果。于是在网上搜解决方案，得知一个叫拉马的玩意儿，但是电机主轴太细，齿轮又小，最后买了这个最小号的破拉马(因为便宜)，可是问题又来了，拉马太厚，没办法抓住齿轮orzzzzzz，没办法，手工磨吧，终于磨到能抓住齿轮了，主轴太细想了个办法，通过头上接一个螺丝刀头，才勉强拉出来。<br>还没完，电机主轴竟然太粗了，联轴器放不进去！！！应该是差0.几毫米，拿出电钻，把联轴器搞大(好邪恶)才装上电机。</p>
+<h3 id="2-2-坑·惰轮轴承">2.2.坑·惰轮轴承</h3><p>一开始的时候在皮带惰轮处没有带轴承orz，组装完成后总觉着皮带好重，声音巨响。以至于我开始怀疑人生。多次看了reprap后才知道，重新买了轴承的惰轮。</p>
+<h3 id="2-3-坑·定制钢板">2.3.坑·定制钢板</h3><p>由于这个方案XYZ轴都是线轨，其中X轴是直接mount在Z轴上的，所以对这个Z轴的连接片厚度要求非常精确，不然会影响很大，我第一次做的钢板，说是5mm，并且打了沉孔，谁知道沉孔太小了，螺丝还漏在外面，导致厚度太厚。并且在装配过程中会有多出来误差，所以第二次才做了3mm的钢板，安装，一切ok。</p>
+<h2 id="3-硬件/程序调试">3.硬件/程序调试</h2><p>固件用的是marlin,可以选择其他的，<a href="http://reprap.org/wiki/Comparison_of_Firmware" target="_blank" rel="external">reprap固件列表</a>。<br>毕竟还是电子科班毕业，曾经也干过1年的单片机开发，调试中没有什么坑，一路很顺。如果自己比较有信心，可以下载开发版本。<br><a href="https://github.com/MarlinFirmware/Marlin" target="_blank" rel="external">MARLIN固件</a><br>下载完marlin固件，直接用<a href="https://www.arduino.cc/en/Main/Software/" target="_blank" rel="external">Arduino IDE</a>打开，配置固件主要就集中在Configuration.h中。</p>
+<h3 id="3-1-固件配置">3.1.固件配置</h3><p>这里面都有注释，可以根据自己的具体情况进行配置，我这里偷懒抄几个重要的记录，参考<a href="http://www.makerlab.me/guides/1/articles" target="_blank" rel="external">创客实验室</a>。</p>
+<blockquote>
+<p><strong><code>#define MOTHERBOARD BOARD_RAMPS_13_EFB</code></strong><br>//是选择你用的哪个控制板，<code>Marlin</code>支持很多种3D打印机控制板，可以在boards.h中找到支持的控制板。<br><strong><code>#define EXTRUDE_MINTEMP 170</code></strong><br>//这个参数是为了防止<code>打印头(hotend)</code>温度未达到而进行挤出操作，不然挤出机就会打滑，所以建议打印PLA可以设置在170以上，当然，如果你是调试机器，完全可以把它设置为0。<br><strong><code>const bool X_ENDSTOPS_INVERTING = true;</code></strong><br><strong><code>const bool Y_ENDSTOPS_INVERTING = true;</code></strong><br><strong><code>const bool Z_ENDSTOPS_INVERTING = true;</code></strong><br>//这里的三个参数是配置3各轴的<code>限位开关</code>类型的，配置为true，限位开关默认状态输出为1，触发状态输出为0，也就是机械限位应该接常开端子。如果你接常闭端子，则将true改为false。<br><strong><code>#define INVERT_X_DIR true</code></strong><br><strong><code>#define INVERT_Y_DIR</code></strong><br>//false这两个参数是比较容易错的。根据自己机械的类型不通，电机的正反转方向不同，两个的配置不尽相同。但是原则就是要保证原点应该在打印平台的左下角（原点位置为[0,0]），或右上角（原点位置为[max,max]）。只有这样打印出来的模型才是正确的，否则会是某个轴的镜像而造成模型方位不对。参考下图坐标。<img src="http://ww3.sinaimg.cn/mw690/66dae2b0gw1eys496go6mj203j03o743.jpg" alt=""><br><strong><code>#define X_HOME_DIR -1</code></strong><br><strong><code>#define Y_HOME_DIR -1</code></strong><br><strong><code>#define Z_HOME_DIR -1</code></strong><br>//这3个参数是用来配置原点位置，也和你的机器的结构，电机正反转方向有关，需要与上面的一起结合配置。<br><strong><code>#define DEFAULT_AXIS_STEPS_PER_UNIT   {160,160,1600,190}</code></strong><br>//根据步进电机、驱动、同步轮、丝杆计算脉冲数，这个参数是打印机打印尺寸是否正确的最重要参数，参数含义为运行1mm各轴所需要的脉冲数，分别对应x,y,z,e四轴。多数情况下这个数字都需要自己计算才可以。计算公式可以参考我的文章3d打印机各轴脉冲数计算方法。如果你不想自己计算可以用创客实验室的计算器：<a href="http://www.makerlab.me/calc/index.html" target="_blank" rel="external">3d打印机脉冲数计算器</a><br><strong><code>#define REPRAP_DISCOUNT_SMART_CONTROLLER</code></strong><br>//如果你和我一样有<code>2004 smart CONTROLLER</code>，请把上面这行最前面<code>//</code>注释去掉</p>
+</blockquote>
+<p>基本配置就这样结束，进阶功能，如加速度配置、自动调平配置等，可以自己摸索下固件，都有现成的配置参数。</p>
+<h3 id="3-2-固件烧录">3.2.固件烧录</h3><p><a href="https://www.arduino.cc/en/Main/Software/" target="_blank" rel="external">Arduino IDE</a>真是挺方便的，除了mega 2560板子上的usb转串口芯片要装下驱动之外，写入程序真的是一键完成，不再赘述。</p>
+<h3 id="3-3-硬件连接">3.3.硬件连接</h3><p>比较简单，除了别把你的电机驱动模块插反，根据下图基本都能接上，主要就是查看固件是否能够顺利驱动硬件。否则你得检查固件是否配置正确，硬件是否连接正常。<br>↓调试中<br><img src="http://ww4.sinaimg.cn/mw690/66dae2b0gw1eyrddy3bc1j225o17ptuj.jpg" class="full-image" alt=""><br><img src="http://ww2.sinaimg.cn/mw690/66dae2b0gw1eys44sd9j7j20k00gsdj5.jpg" class="full-image" alt=""><br><img src="http://ww3.sinaimg.cn/mw690/66dae2b0gw1eys4577qosj224l1p97wh.jpg" class="full-image" alt=""></p>
+<h3 id="3-4-电机驱动电流调节">3.4.电机驱动电流调节</h3><p>这里主要说下电机驱动，由于电机驱动drv8825上有一个电位器是可以调节输出电流的，可以通过万用表测该点的电位，将此点电位调制你想要输出电流的1/2就可以了。一般来讲输出电流太大，电机容易发热发出吱吱吱的声音，如果电流太小，则电机力气太小容易失步，当然这个电流值要与步进电机匹配。</p>
+<h3 id="3-5-电线与电源">3.5.电线与电源</h3><p>3D打印本身对电的要求不是特别高，主要吃电来自热床，但是目前RAMPS1.4只支持12v的电压输入，热床的功耗也是高达120w左右，12v下，电流需要10A，当然，热床不是长时间工作，因为是PID控制，我建议选线不要小于2个平方。<br>电源最好选择开关电源，12v18A以上吧，当然如果热床就不需要这么大。</p>
+<h2 id="4-上位机软件">4.上位机软件</h2><h3 id="4-1-切片软件">4.1.切片软件</h3><blockquote>
+<p>切片软件的作用就是将需要打印的模型(*.stl)，通过给定的参数，比如打印精度、打印速度等，转化为一个路径描述的gcode文件(*.gcode)，使得固件能通过读取gcode文件中的G代码，执行相应的操作。</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/alexrj/Slic3r" target="_blank" rel="external"><strong>Slic3r</strong></a>:开源软件，貌似是reprap出来的，自定义功能强大，各种设置，缺点就是速度太慢，可能对路径优化也有待提高，打印速度想对较慢，不过打印出来的东西质量不做。总结就是自定义功能强，慢！</li>
+<li><a href="https://github.com/daid/Cura" target="_blank" rel="external"><strong>Cura</strong></a>:开源软件，用python写的。切片速度相比Slic3r快，是Ultimaker打印机的默认切片软件。可定义的参数相对较少，但是总体都令人满意。</li>
+<li><a href="https://www.simplify3d.com" target="_blank" rel="external"><strong>smilpify3d</strong></a>：付费软件，既有控制，也带了切片功能，主要特点就是快！切片路径也优化的很好，另外还有一个亮点，自定义支撑，没错你可以在任意位置放上你想要的支撑。</li>
+</ul>
+<h3 id="4-2-控制软件">4.2.控制软件</h3><blockquote>
+<p>控制软件作用就是通过上位机控制打印机XYZ轴的运动，加热喷头、热床、控制挤出机等操作。</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/kliment/Printrun" target="_blank" rel="external"><strong>printrun</strong></a>：开源软件，同样是用python写的，现在好像改名叫pronterface，也是reprap社区一开始很火的控制软件，现在逐渐被REPETIER-HOST取代。</li>
+<li><a href="http://octoprint.org/" target="_blank" rel="external"><strong>OctoPrint</strong></a>:这个我喜欢，同样是用python写的，是BS架构的，前几天刚刚把他挂在树莓派上，这样我就可以远程控制了，再也不用把电脑拿到打印机边上了。同时还支持摄像头，可以远程监控。</li>
+<li><strong>repetier-host</strong>：感觉是printrun的升级版，是一个打印平台，整合了slic3r和cura切片软件，当然还可以加上其他的切片引擎，好处是可以切片打印一起使用，没有深入使用。</li>
+</ul>
+<p>上位机软件经过将模型切片完成，并通过控制软件控制3D打印机进行打印机<br>↓打印的鸟笼测试模型<br><img src="http://ww2.sinaimg.cn/mw690/66dae2b0gw1eys44yyx2jj21u219wtoe.jpg" class="full-image"><br>↓权力的游戏中艾德·斯塔克”巨剑”<br><img src="http://ww3.sinaimg.cn/mw690/66dae2b0gw1eyrdg76v6rj22io1oge81.jpg" class="full-image"><br><img src="http://ww4.sinaimg.cn/mw690/66dae2b0gw1eyrdfu5j9oj22io1oghdt.jpg" class="full-image"><br><img src="http://ww3.sinaimg.cn/mw690/66dae2b0gw1eyrdg0umgaj22io1oghdt.jpg" class="full-image"></p>
+<h2 id="5-FDM_3D打印经验总结">5.FDM 3D打印经验总结</h2><h3 id="5-1-机械结构">5.1.机械结构</h3><p>由于FDM的结构必须要有加热头在不停的移动才能打印出实体，并且，在打印过程中X/Y轴是频繁移动的，Z轴则是每打印一层上升一层（打印平台已经调平的情况下）。我做的这个打印结构也就是i3结构，在打印过程中打印平台是Y轴，由于平台较重，在高速移动下惯性大，容易失步，所以优化电机的加速度尤为重要了，当然也是结构限制，i3类结构不适宜快速打印，但是也有好处是打印质量较好。<br>现在比较流行的Ultimaker 类结构，就是将频繁移动的X/Y轴全部由打印头来移动，打印头相对来说重量轻，从而能搞在保证打印质量的前提下快速打印。<br>另外一种结构为三角洲，主要是制作成本较低，打印速度快，较为流行，它xyz轴全部都通过3条并联臂来进行移动，所以有了很好的打印速度，但是需要的Z轴空间也比较大，就是打印机比较高，同时在打印过程中，越往上打印，整个打印机的重心就为偏上，整个机构不稳定，会在一定程度上影响打印质量。</p>
+<h3 id="5-2-切片">5.2.切片</h3><p>切片软件的选择其实挺重要，有些模型用cura切的效果不好，在同样的参数下，用slic3r切则效果挺好，目前切片软件还在高速发展的过程中，要注意的就是多试试，总会找到适合机器的参数。</p>
+<h3 id="5-3-打印第一层">5.3.打印第一层</h3><p>在3D打印中，第一层打印尤为重要，好比造房子，地基没打好，上面再怎么打印都是徒劳。<br>以我买的最便宜的PLA材料为例，热床的温度要大道60度左右才能将第一层完好的粘在热床上，各种材料对温度的要求都不同，需要试验下。另外也有用美纹纸和PVP固体胶，我试过固体胶，粘连效果的确很好，但是打印完成后拿下来就比较棘手，所以在用PVP固体胶的朋友推荐在切片的时候在模型下面加上raft底座，便于取下打印模型。</p>
+<h3 id="5-4-打印镂空">5.4.打印镂空</h3><p>3D打印的魅力就在于它能该答应你给出的任意3D模型，模型中不乏镂空件，我在一开始的时候打印各种拉丝，所以在切片的时候设置回抽参数特别重要，同时要在打印嘴上加上一个冷却风扇，以便与在封顶的时候能够快速冷却，不然丝就直接掉下来了。</p>
+<h3 id="5-5-调平&amp;自动调平">5.5.调平&amp;自动调平</h3><p>不得不说对于i3系结构来说调平是个大坑，很多时候第一层打印不牢靠与打印平台没有调平存在很大原因，好在机架比较扎实，手动调平一次就可以一直打印。调平的经历我就不说了。自动调平，主要是通过各种传感器或者用舵机控制触点开关反馈给控制板让其知道平台上的高低，通过软件的算法，来弥补平台的高低。在三角洲打印机上基本上是标配，目前Marlin最新版本已经很好的支持了自动调平。在加上传感器的情况下，简单配置Marlin就可以实现自动调平。<br>显然我在一开始做规划的时候没有考虑到自动调平，加上舵机这种方式结构上太复杂，后来翻看reprap相关资料发现可以用接近/光电开关来进行平台探测，结构上非常简单，当然对这些开关的重复精度要求较高。光电开关一般选用漫反射原理，接近开关分电容式和电感式。由于我的热床是铝基板，电容式、电感式都可以使用，为了省钱，买了个电感式接近开关，安装后效果满意，从此再也不用调平了。</p>
+<p>最后附上万恶之源j1900搭建的黑裙<br><img src="http://ww1.sinaimg.cn/mw690/66dae2b0gw1eyrdef16pkj21g320x4qp.jpg" class="full-image" alt="j1900"></p>
+<p>资源列表：<br><a href="http://reprap.org/wiki/Comparison_of_Firmware" target="_blank" rel="external">reprap固件列表</a><br><a href="http://reprap.org/wiki/Comparison_of_Electronics" target="_blank" rel="external">reprap控制板列表</a><br><a href="http://reprap.org/wiki/Hot_End_Comparison" target="_blank" rel="external">reprap加热头列表</a><br><a href="http://www.thingiverse.com/" target="_blank" rel="external">thingiverse模型库</a></p>
+<p>原创内容，转载注明出处。<br>本文链接：<a href="http://blog.ick.im/posts/2015-12-08-icks-3d-printer.html">http://blog.ick.im/posts/2015-12-08-icks-3d-printer.html</a></p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/3D打印/" rel="tag">#3D打印</a>
+          
+            <a href="/tags/Arduino/" rel="tag">#Arduino</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/2015-08-03-lg-napl-5000-ubnt.html" rel="next" title="LG-NAPL-5000 刷ubnt 折腾记">
+                <i class="fa fa-chevron-left"></i> LG-NAPL-5000 刷ubnt 折腾记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="posts/2015-12-08-icks-3d-printer.html"
+           data-title="入坑? Ick's 3D打印折腾历程" data-url="http://blog.ick.im/posts/2015-12-08-icks-3d-printer.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww4.sinaimg.cn/mw690/66dae2b0jw8eb3esfopvsj20hs0hsaaw.jpg"
+               alt="lisaac" />
+          <p class="site-author-name" itemprop="name">lisaac</p>
+          <p class="site-description motion-element" itemprop="description">Ick's Blog</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lisaac" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Github
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://plus.google.com/+lisaac" target="_blank">
+                  
+                    <i class="fa fa-google"></i> Google+
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/lisaac" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/lisaac__" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> Twitter
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-起源"><span class="nav-text">0.起源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-采购"><span class="nav-text">1.采购</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-框架"><span class="nav-text">1.1.框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-线轨和滑块"><span class="nav-text">1.2.线轨和滑块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-定制钢板"><span class="nav-text">1.3.定制钢板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-丝杆/齿轮/传动皮带/联轴器"><span class="nav-text">1.4.丝杆/齿轮/传动皮带/联轴器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-螺丝"><span class="nav-text">1.5.螺丝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-步进电机"><span class="nav-text">1.6.步进电机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7-电子器件"><span class="nav-text">1.7.电子器件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8-相关3d打印器件"><span class="nav-text">1.8.相关3d打印器件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-机械组装"><span class="nav-text">2.机械组装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-坑·步进电机"><span class="nav-text">2.1.坑·步进电机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-坑·惰轮轴承"><span class="nav-text">2.2.坑·惰轮轴承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-坑·定制钢板"><span class="nav-text">2.3.坑·定制钢板</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-硬件/程序调试"><span class="nav-text">3.硬件/程序调试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-固件配置"><span class="nav-text">3.1.固件配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-固件烧录"><span class="nav-text">3.2.固件烧录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-硬件连接"><span class="nav-text">3.3.硬件连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-电机驱动电流调节"><span class="nav-text">3.4.电机驱动电流调节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-电线与电源"><span class="nav-text">3.5.电线与电源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-上位机软件"><span class="nav-text">4.上位机软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-切片软件"><span class="nav-text">4.1.切片软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-控制软件"><span class="nav-text">4.2.控制软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-FDM_3D打印经验总结"><span class="nav-text">5.FDM 3D打印经验总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-机械结构"><span class="nav-text">5.1.机械结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-切片"><span class="nav-text">5.2.切片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-打印第一层"><span class="nav-text">5.3.打印第一层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-打印镂空"><span class="nav-text">5.4.打印镂空</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-调平&自动调平"><span class="nav-text">5.5.调平&自动调平</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lisaac</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lisaac"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("nrBCWNEMU1FO9yyApLyLOfBH", "qldw7npQ7M8BkMjLNS1y6Dj1");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+</body>
+</html>
