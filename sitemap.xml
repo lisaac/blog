@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ick.im/404.html</loc>
+    <lastmod>2015-12-22T13:27:54.837Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://blog.ick.im/posts/2015-12-08-icks-3d-printer.html</loc>
     <lastmod>2015-12-22T08:00:12.926Z</lastmod>
   </url>
