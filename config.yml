@@ -1,19 +1,19 @@
 # site title
-title: "Ick's Blog"
+title: Ick's blog
 
 # user name or organization name
-user: 'lisaac'
+user: lisaac
 
 # issue repository
-repository: 'blog'
+repository: blog
 
 # multi-author
-authors: 'lisaac.cn@gmail.com'
+authors: lisaac
 
 # token
 # token should be separated by '#'
 # example: 5#c31bffc137f44faf7efc4a84da827g7ca2cfeaa
-token: '771fc1f5ded50062387283b8f63710507ad541c2'
+token: c#96af6f26b785633fdc411048ffc95c4c365d5cd
 
 # posts per page
 perpage: 10
