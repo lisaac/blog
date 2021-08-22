@@ -1,25 +1,105 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en" class="loading">
 <head>
 <meta charset="UTF-8" />
-<title> Falco </title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAAGFBMVEUAAAA7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozsmr7C1AAAAB3RSTlMA8o3HRiCjAZ7XVAAAAFRJREFUKM9jGAUMDE6GwiroYkHi5eWFqqhirOnlQFAWgCLIVA4GCiiCjhBBERRBdYhgEYqgOUSwGEVQHCJYSEgQoZ2QRQgnEXI8wpsEAgQRdKOAAQCvriuz6lBMNwAAAABJRU5ErkJggg==" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title> Loading... </title>
 <script>
-    window.config = {
-      organization: false, // 默认是 false，如果你的项目是属于 GitHub 组织 的，请设置为 true
-      order: 'UPDATED_AT', // 文章排序，以 创建时间 或者 更新时间，可选值 'UPDATED_AT'，'CREATED_AT'
-      title: 'Ick', // 博客标题
-      user: 'lisaac \'s blog', // GitHub 用户名，必须
-      repository: 'blog', // GitHub 项目名，指定文章内容来源 issues，必须
-      authors: 'lisaac', // 博客作者，以 ',' 分割，GitHub 用户名默认包含在内
-      ignores: '17,13', // 文章忽略的 issues ID
-      host: 'blog.ick.im', // 博客的主域名，不填自动获取，请注意这个值会影响 hash 的值
-      hash: 'ghp_NBcw(JfsZ(&aP*rGL*)sl(d)up@bEb!AohweYmxvZy5pY2suaW0=', // 必须
-      perpage: 10, // 分页
-    }
-    </script>
+window.config = {
+  organization: false, // 默认是 false，如果你的项目是属于 GitHub 组织 的，请设置为 true
+  order: 'UPDATED_AT', // 文章排序，以 创建时间 或者 更新时间，可选值 'UPDATED_AT'，'CREATED_AT'
+  title: 'Ick', // 博客标题
+  user: 'lisaac \'s blog', // GitHub 用户名，必须
+  repository: 'blog', // GitHub 项目名，指定文章内容来源 issues，必须
+  authors: 'lisaac', // 博客作者，以 ',' 分割，GitHub 用户名默认包含在内
+  ignores: '', // 文章忽略的 issues ID
+  host: 'blog.ick.im', // 博客的主域名，不填自动获取，请注意这个值会影响 hash 的值
+  hash: 'ghp_NBcw(JfsZ(&aP*rGL*)sl(d)up@bEb!AohweYmxvZy5pY2suaW0=', // 必须
+  perpage: 10, // 分页
+  }
+</script>
+<style>
+  .loading,
+  .error,
+  .transition {
+    height: 100%;
+  }
+  .loading body,
+  .error body,
+  .transition body {
+    height: 100%;
+  }
+  #loader {
+    text-align: center;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    background-color: rgba(255, 255, 255, .95);
+  }
+  .loading #loader {
+    opacity: 1;
+    visibility: visible;
+  }
+  .loading #loader div {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+    box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+  }
+  .loading #loader div:before {
+    content: '';
+    width: 26px;
+    height: 26px;
+    display: block;
+    margin: 8px auto 0;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-animation: loading .5s linear forwards infinite;
+    animation: loading .5s linear forwards infinite;
+    border-top: 4px solid #0089fa;
+    border-right: 4px solid #ff002b;
+    border-bottom: 4px solid #ffa900;
+    border-left: 4px solid #00a753;
+  }
+  .loading #loader:after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  @keyframes loading { 100% { transform: rotate(360deg) } }
+  @-webkit-keyframes loading { 100% { -webkit-transform: rotate(360deg) } }
+</style>
 </head>
 <body>
-<div id="root"></div>
+<div id="bar"></div>
+<div class="page home">
+  <div>
+  <div id="user"></div>
+  <div id="posts"></div>
+  </div>
+</div>
+<div class="page single">
+  <div>
+  <div id="post"></div>
+  <div id="comments"></div>
+  </div>
+</div>
+<div id="loader"><div></div></div>
 <script src="./index.0fbaafc4.js"></script>
 </body>
 </html>
